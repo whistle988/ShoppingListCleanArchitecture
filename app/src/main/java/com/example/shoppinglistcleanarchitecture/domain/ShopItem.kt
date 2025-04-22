@@ -1,8 +1,14 @@
 package com.example.shoppinglistcleanarchitecture.domain
 
 data class ShopItem(
-    val id: Int,
     val name: String,
     val count: Int,
-    val enabled: Boolean
-)
+    val enabled: Boolean,
+    var id: Int = UNDEFIED_ID,
+) {
+
+    companion object {
+
+        const val UNDEFIED_ID= -1
+    }
+}
