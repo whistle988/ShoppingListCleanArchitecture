@@ -9,6 +9,6 @@ data class ShopItem(
 
     companion object {
 
-        const val UNDEFIED_ID= -1
+        const val UNDEFIED_ID= 0
     }
 }

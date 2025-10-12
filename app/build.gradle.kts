@@ -56,4 +56,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // room
+    implementation(libs.androidx.room.common.jvm)
+    implementation(libs.androidx.room.runtime.android)
+    implementation (libs.androidx.ui.room.runtime)
+    implementation (libs.androidx.ui.room)
+    // coroutines
+    implementation(libs.androidx.coroutines.core)
+    implementation(libs.androidx.coroutines.android)
+    // lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.livedata)
 }
