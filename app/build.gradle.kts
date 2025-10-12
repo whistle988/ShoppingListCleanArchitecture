@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    kotlin("kapt")
 }
 
 android {
@@ -36,6 +38,7 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
     }
 }
 
@@ -49,6 +52,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.databinding.common)
+    implementation(libs.material)
+    implementation(libs.androidx.databinding.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -61,6 +67,10 @@ dependencies {
     implementation(libs.androidx.room.runtime.android)
     implementation (libs.androidx.ui.room.runtime)
     implementation (libs.androidx.ui.room)
+    implementation (libs.androidx.room.compiler)
+    //ksp(libs.androidx.room.compiler)
+    // databinding
+    implementation(libs.androidx.databinding.runtime)
     // coroutines
     implementation(libs.androidx.coroutines.core)
     implementation(libs.androidx.coroutines.android)

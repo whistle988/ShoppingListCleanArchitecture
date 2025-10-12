@@ -1,6 +1,8 @@
 package com.example.shoppinglistcleanarchitecture.data
 
 import android.app.Application
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import com.example.shoppinglistcleanarchitecture.domain.ShopItem
 import com.example.shoppinglistcleanarchitecture.domain.ShopListRepository
 
@@ -28,8 +30,7 @@ class ShopListRepositoryImpl(
         return mapper.mapDbModelToEntity(dbModel)
     }
 
-    override suspend fun getShopList(): List<ShopItem> {
-        val dbModels = shopListDao.getShopList()
-        return mapper.mapListDbModelToListEntity(dbModels)
+    override fun getShopList(): LiveData<List<ShopItem>> = shopListDao.getShopList().map {
+        mapper.mapListOfDbModelToListOfEntity(it)
     }
 }
