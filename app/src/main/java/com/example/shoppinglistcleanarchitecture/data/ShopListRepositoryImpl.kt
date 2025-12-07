@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.example.shoppinglistcleanarchitecture.domain.ShopItem
 import com.example.shoppinglistcleanarchitecture.domain.ShopListRepository
-import kotlin.random.Random
 
 class ShopListRepositoryImpl(
     application: Application
