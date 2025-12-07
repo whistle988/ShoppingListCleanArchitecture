@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    kotlin("kapt")
 }
 
 android {
@@ -34,6 +37,8 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        compose = true
+        dataBinding = true
         viewBinding = true
     }
 }
@@ -41,6 +46,15 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.databinding.common)
+    implementation(libs.androidx.databinding.runtime)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
@@ -49,4 +63,23 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
+    // room
+    implementation(libs.androidx.room.common.jvm)
+    implementation(libs.androidx.room.runtime.android)
+    implementation (libs.androidx.ui.room.runtime)
+    implementation (libs.androidx.ui.room)
+    implementation (libs.androidx.room.compiler)
+    //ksp(libs.androidx.room.compiler)
+    // databinding
+    implementation(libs.androidx.databinding.runtime)
+    // coroutines
+    implementation(libs.androidx.coroutines.core)
+    implementation(libs.androidx.coroutines.android)
+    // lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.livedata)
 }
