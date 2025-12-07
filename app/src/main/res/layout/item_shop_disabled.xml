@@ -23,12 +23,12 @@
         app:cardElevation="1dp"
         app:cardUseCompatPadding="true">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#33BB86FC"
-            android:orientation="horizontal"
-            android:padding="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#33BB86FC"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
             <TextView
                 android:id="@+id/tv_name"
